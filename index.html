@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2E7D32">
+  <title>For my baobao</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell" aria-live="polite">
+    <div class="screen" data-screen="curtain">
+      <section class="pixel-window opening-window" aria-label="Birthday surprise opening">
+        <header class="window-bar"><span class="window-dots">● ● ●</span><strong>SURPRISE.EXE</strong></header>
+        <div class="curtain-stage" id="curtainStage">
+          <div class="spotlight"></div>
+          <div class="stage-vignette"></div>
+          <svg class="stage-art" viewBox="0 0 360 500" aria-hidden="true">
+            <defs>
+              <linearGradient id="curtainTexture" x1="0" x2="1">
+                <stop offset="0" stop-color="#1B4332"/><stop offset=".18" stop-color="#4CAF50"/>
+                <stop offset=".38" stop-color="#2E7D32"/><stop offset=".58" stop-color="#A5D6A7"/>
+                <stop offset=".72" stop-color="#2E7D32"/><stop offset="1" stop-color="#1B4332"/>
+              </linearGradient>
+            </defs>
+            <path class="valance" d="M0 0H360V92C330 130 300 94 270 126C240 158 210 102 180 135C150 102 120 158 90 126C60 94 30 130 0 92Z"/>
+            <path class="valance-trim" d="M0 91C30 129 60 93 90 125C120 157 150 101 180 134C210 101 240 157 270 125C300 93 330 129 360 91"/>
+            <path class="backdrop" d="M0 110H360V420H0Z"/>
+            <path class="stage-floor" d="M0 403H360V500H0Z"/>
+            <path class="floor-reflection" d="M58 430 Q180 407 302 430 Q180 454 58 430Z"/>
+            <g class="dust"><circle cx="125" cy="214" r="2"/><circle cx="232" cy="180" r="1.5"/><circle cx="270" cy="275" r="2"/><circle cx="96" cy="310" r="1.5"/></g>
+            <g class="curtain curtain-left"><path d="M0 0H151C138 80 153 126 137 190C128 235 146 290 130 345C120 381 138 403 148 420H0Z"/></g>
+            <g class="curtain curtain-right"><path d="M360 0H209C222 80 207 126 223 190C232 235 214 290 230 345C240 381 222 403 212 420H360Z"/></g>
+            <path class="curtain-trim left-trim" d="M145 0C132 100 149 155 133 220C125 275 143 340 145 420"/>
+            <path class="curtain-trim right-trim" d="M215 0C228 100 211 155 227 220C235 275 217 340 215 420"/>
+            <g class="tassel left-tassel"><path d="M133 383v31"/><path d="M119 414h28l-5 24h-18Z"/></g>
+            <g class="tassel right-tassel"><path d="M227 383v31"/><path d="M213 414h28l-5 24h-18Z"/></g>
+          </svg>
+          <div class="opening-copy">
+            <div class="sparkle-burst" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span></div>
+            <button class="seal-button" id="openCurtains" type="button" aria-label="Tap to open your birthday surprise">
+              <span class="seal-ripple"></span>
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l3.6 9.4L37 20l-9.4 3.6L24 33l-3.6-9.4L11 20l9.4-3.6Z"/><path d="M18 33h12v8H18zM16 33h16l-8-6Z"/></svg>
+            </button>
+            <p>Tap to open your surprise <span class="arrow">↓</span></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="screen is-hidden" data-screen="countdown">
+      <section class="countdown-card">
+        <div class="countdown-number" id="countdownNumber">3</div>
+        <div class="progress-dots" id="countdownDots" aria-label="Countdown progress">
+          <span class="active"></span><span></span><span></span>
+        </div>
+      </section>
+    </div>
+
+    <div class="screen is-hidden" data-screen="loading">
+      <section class="pixel-window loading-window">
+        <header class="window-bar"><span class="window-dots">● ● ●</span><strong>LOADING.EXE</strong></header>
+        <div class="window-content loading-content">
+          <div class="tiny-gift" aria-hidden="true">▣</div>
+          <p>Loading your birthday surprise<span class="loading-dots"></span></p>
+          <div class="loading-track"><span></span></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="screen is-hidden" data-screen="party">
+      <section class="pixel-window party-window">
+        <header class="window-bar"><span class="window-dots">● ● ●</span><strong>SURPRISE.EXE</strong></header>
+        <div class="window-content party-content">
+          <p class="eyebrow">A VERY IMPORTANT NOTIFICATION</p>
+          <h1>My girl was born<br><em>19 years ago</em><br>today!</h1>
+          <button class="pixel-button" data-next="cake" type="button">Start the surprise <span>→</span></button>
+        </div>
+      </section>
+    </div>
+
+    <div class="screen is-hidden" data-screen="cake">
+      <section class="pixel-window">
+        <header class="window-bar"><span class="window-dots">● ● ●</span><strong>CAKE.DAT</strong></header>
+        <div class="window-content cake-content">
+          <h2>Swipe to cut the cake</h2>
+          <p class="instruction">Drag across the frosting with your finger or mouse.</p>
+          <div class="cake-area" id="cakeArea" aria-label="Cake to slice">
+            <div class="slice-guide" id="sliceGuide"><span class="guide-finger">☝</span> Swipe or tap the cake</div>
+            <svg class="cake-art" viewBox="0 0 360 220" role="img" aria-label="Green birthday cake with candles">
+              <defs>
+                <linearGradient id="spongeShade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#A5D6A7"/><stop offset="1" stop-color="#4CAF50"/></linearGradient>
+                <filter id="cakeShadow"><feGaussianBlur stdDeviation="3"/></filter>
+              </defs>
+              <ellipse class="ground-shadow" cx="180" cy="199" rx="125" ry="9"/>
+              <ellipse class="plate" cx="180" cy="188" rx="130" ry="17"/>
+              <g class="cake-half cake-half-left" id="cakeHalfLeft">
+                <path class="sponge" d="M75 132 Q180 151 285 132 L285 173 Q180 194 75 173Z"/>
+                <path class="cream-layer" d="M75 132 Q180 151 285 132 L285 147 Q180 166 75 147Z"/>
+                <path class="sponge" d="M75 99 Q180 118 285 99 L285 132 Q180 151 75 132Z"/>
+                <path class="frosting" d="M67 100 Q180 120 293 100 L284 117 Q180 138 76 117Z"/>
+                <path class="icing-drip" d="M76 113 L76 128 Q83 138 91 127 L91 116 M127 123 L127 139 Q136 147 144 135 L144 126 M228 125 L228 141 Q236 149 245 137 L245 127"/>
+                <g class="candle candle-one"><path d="M124 97V53h14v47"/><path class="flame" d="M131 49 C120 39 134 34 132 25 C146 38 144 47 131 49Z"/></g>
+                <g class="candle candle-two"><path d="M173 103V43h14v61"/><path class="flame" d="M180 39 C169 29 183 23 181 14 C195 28 193 37 180 39Z"/></g>
+                <g class="candle candle-three"><path d="M222 97V53h14v47"/><path class="flame" d="M229 49 C218 39 232 34 230 25 C244 38 242 47 229 49Z"/></g>
+              </g>
+              <g class="slice-piece" id="slicePiece">
+                <path class="sponge" d="M154 108 L206 108 L206 173 L154 173Z"/>
+                <path class="cream-layer" d="M154 132 L206 132 L206 147 L154 147Z"/>
+              </g>
+              <g class="slice-fx-depth" aria-hidden="true">
+                <path class="slice-fx-cut-edge" d="M180 96L180 177"/>
+                <path class="slice-fx-inner-cream" d="M174 116L186 116L186 148L174 148Z"/>
+                <path class="slice-fx-inner-sponge" d="M174 151L186 151L186 173L174 173Z"/>
+              </g>
+              <g class="sparkle-layer" id="sparkleLayer"><path d="M180 66v22M169 77h22M274 83v14M267 90h14" /></g>
+            </svg>
+            <div class="knife-trail" id="knifeTrail"></div>
+            <div class="slash-flash" id="slashFlash"></div>
+            <div class="smoke-wisps" id="smokeWisps"><i></i><i></i><i></i></div>
+            <div class="slice-fx-particle-layer" id="sliceFxParticles" aria-hidden="true"></div>
+          </div>
+          <p class="gesture-status" id="gestureStatus">Your slice is waiting...</p>
+          <button class="pixel-button slice-fallback is-hidden" id="sliceFallback" type="button">Slice the cake <span>✦</span></button>
+        </div>
+      </section>
+    </div>
+
+    <div class="screen is-hidden" data-screen="celebration">
+      <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+      <section class="pixel-window celebration-window">
+        <header class="window-bar"><span class="window-dots">● ● ●</span><strong>PARTY.ON</strong></header>
+        <div class="window-content celebration-content">
+          <div class="celebration-star" aria-hidden="true">✦</div>
+          <p class="eyebrow">MISSION COMPLETE</p>
+          <h2>Happy<br><em>Birthday!</em></h2>
+          <button class="pixel-button" data-next="letter" type="button">Read Message <span>→</span></button>
+        </div>
+      </section>
+    </div>
+
+    <div class="screen is-hidden" data-screen="letter">
+      <section class="pixel-window">
+        <header class="window-bar"><span class="window-dots">● ● ●</span><strong>LETTER.DOC</strong></header>
+        <div class="window-content envelope-content">
+          <p class="eyebrow">PRIVATE MESSAGE</p>
+          <h2>A Letter For You</h2>
+          <div class="envelope">
+            <div class="envelope-paper"></div>
+            <button class="wax-seal" id="waxSeal" type="button" aria-label="Open your special message">♥</button>
+          </div>
+          <p class="seal-prompt">Tap the seal to open your special message</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="screen is-hidden" data-screen="message">
+      <section class="pixel-window message-window">
+        <header class="window-bar"><span class="window-dots">● ● ●</span><strong>MESSAGE.TXT</strong></header>
+        <div class="window-content message-content">
+          <h2 id="messageHeading">For my girl,</h2>
+          <div class="letter-text" id="letterText">
+            <span class="letter-visible"></span><span class="letter-full"></span>
+          </div>
+          <p class="letter-signoff">— Baobao<br><strong>Your biggest fan ♥</strong></p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <audio id="backgroundMusic" loop preload="auto"></audio>
+  <button class="mute-button is-hidden" id="muteButton" type="button" aria-label="Mute music">♫</button>
+  <script src="script.js"></script>
+</body>
+</html>
